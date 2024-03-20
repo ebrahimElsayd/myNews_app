@@ -1,9 +1,13 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_news_c10_sun3/home/category/category_details.dart';
 import 'package:flutter_app_news_c10_sun3/home/home_screen.dart';
 import 'package:flutter_app_news_c10_sun3/my_theme.dart';
 
+import 'my_bloc_observer.dart';
+
 void main() {
+  Bloc.observer = MyBlocObserver();
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
