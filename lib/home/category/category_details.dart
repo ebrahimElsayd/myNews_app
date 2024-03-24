@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_news_c10_sun3/api/api_manager.dart';
+import 'package:flutter_app_news_c10_sun3/di.dart';
 import 'package:flutter_app_news_c10_sun3/home/category/cubit/category_details_view_model.dart';
 import 'package:flutter_app_news_c10_sun3/home/category/cubit/states.dart';
 import 'package:flutter_app_news_c10_sun3/model/category.dart';
@@ -18,7 +19,9 @@ class CategoryDetails extends StatefulWidget {
 }
 
 class _CategoryDetailsState extends State<CategoryDetails> {
-  CategoryDetailsViewModel viewModel = CategoryDetailsViewModel();
+  CategoryDetailsViewModel viewModel = CategoryDetailsViewModel(
+    repositoryContract: injectSourceRepositoryContract()
+  );
  @override
   void initState() {
     // TODO: implement initState
