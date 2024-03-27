@@ -4,7 +4,17 @@ import 'package:flutter_app_news_c10_sun3/api/api_constatnts.dart';
 import 'package:flutter_app_news_c10_sun3/model/NewsResponse.dart';
 import 'package:flutter_app_news_c10_sun3/model/SourceResponse.dart';
 import 'package:http/http.dart' as http;
+
 class ApiManager{
+
+  ApiManager._();   /// private constructor
+
+  static ApiManager? _instance ;  // null - object
+
+  static ApiManager getInstance(){
+    _instance ??= ApiManager._();
+    return _instance! ;
+  }
 /*
 https://newsapi.org/v2/top-headlines/sources?apiKey=API_KEY
 500c5a4f9b244f3db92a47f436f1819e
